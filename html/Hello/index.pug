@@ -1,0 +1,21 @@
+extends ../../template/F7.pug
+block myDom
+    div.views
+        div.view.view-main
+            div.pages
+                div.page(data-page='home').navbar-fixed.toolbar-fixed
+                    div.navbar
+                        div.navbar-inner
+                            div.left
+                                a.open-popover(data-popover='.popover-poweredby')
+                                    i.icon.fa.fa-github
+                            div.center.
+                                Hello
+                            div.right
+                    div.page-content
+                        div.content-block
+                            div.content-block-inner
+                                p.
+                                    Hello world
+    include ../../template/popover/poweredby.pug
+
