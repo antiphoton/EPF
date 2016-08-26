@@ -5,5 +5,20 @@
     "express": "^4.14.0",
     "pug": "^2.0.0-beta5",
     "yargs": "^5.0.0"
-  }
+  },
+  "description": "Express Pug Framework7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antiphoton/EPF.git"
+  },
+  "author": "caoboxiao@gmail.com",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/antiphoton/EPF/issues"
+  },
+  "homepage": "https://github.com/antiphoton/EPF#readme"
 }
