@@ -24,6 +24,9 @@ app.get(/\/$/, function (req, res, next) {
 const hasDebugPrivilege = (function () {
     var whiteList = {};
     var f = function (req) {
+        if (req.xhr) {
+            return false;
+        }
         var ip = req.ip;
         if (whiteList[ip]) {
             return true;
@@ -52,12 +55,12 @@ app.get(/\.pug$/, function (req, res, next) {
         res.end();
     }
 });
-app.get(/\/[\w\d-]+\.js/, function (req, res, next) {
-    console.log(req.query.EPF_DEBUG);
-        next();
+app.get(/\/[\w\d-]+\.js$/, function (req, res, next) {
     if (hasDebugPrivilege(req)) {
+        next();
     }
     else {
+        res.redirect(req.path + '.min.js');
     }
 });
 app.use(express.static(path.resolve(__dirname,'../html')));
